@@ -2,14 +2,6 @@
 
 <?php
 require_once('system/configs/dbcfg.php');
-
-$query = $connect->prepare("SELECT * FROM users");
-$query->execute();
-$users_arr = $query->fetch(PDO::FETCH_ASSOC);
-
-echo('<pre>');
-print_r($users_arr);
-echo('</pre>');
 ?>
 
 <!DOCTYPE html>
