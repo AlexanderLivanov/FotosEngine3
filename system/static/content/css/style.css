@@ -37,12 +37,16 @@
 .container {
     display: grid;
     justify-content: center;
-    grid-template-columns: 425px 425px;
-    grid-template-rows: 550px 550px;
+    grid-template-columns: 45% 45%;
+}
+
+.ubox {
+    margin-top: 10vh;
+    scale: 0.8;
 }
 
 .ubox-header {
-    width: 400px;
+    width: 100%;
     height: 50px;
     border: 2px solid black;
     border-radius: 5px 5px 0 0;
@@ -50,8 +54,8 @@
 }
 
 .ubox-content {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 45vw;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-radius: 0;
@@ -59,9 +63,20 @@
 }
 
 .ubox-footer {
-    width: 400px;
+    width: 100%;
     height: 50px;
     border: 2px solid black;
     border-radius: 0 0 5px 5px;
     background-color: white;
+}
+
+.u-avatar {
+    background-color: white;
+    height: 99%;
+}
+
+.u-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100000px;
 }

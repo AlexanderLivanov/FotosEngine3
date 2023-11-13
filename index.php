@@ -16,50 +16,28 @@ require_once('system/configs/dbcfg.php');
 
 <body>
     <div class="container">
-        <div class="ubox">
-            <div class="ubox-header">
+        <?php
 
-            </div>
-            <div class="ubox-content">
+        for($i = 0; $i < 11; $i++){
+            echo(
+                '
+                <div class="ubox">
+                    <div class="ubox-header">
+                        <div class="u-avatar">
+                            <img src="system/static/content/img/julia.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="ubox-content">
 
-            </div>
-            <div class="ubox-footer">
+                    </div>
+                    <div class="ubox-footer">
 
-            </div>
-        </div>
-        <div class="ubox">
-            <div class="ubox-header">
-
-            </div>
-            <div class="ubox-content">
-
-            </div>
-            <div class="ubox-footer">
-
-            </div>
-        </div>
-        <div class="ubox">
-            <div class="ubox-header">
-
-            </div>
-            <div class="ubox-content">
-
-            </div>
-            <div class="ubox-footer">
-
-            </div>
-        </div>
-        <div class="ubox">
-            <div class="ubox-header">
-
-            </div>
-            <div class="ubox-content">
-
-            </div>
-            <div class="ubox-footer">
-
-            </div>
-        </div>
+                    </div>
+                </div>
+                '
+            );
+        }
+        ?>
     </div>
 </body>
 
