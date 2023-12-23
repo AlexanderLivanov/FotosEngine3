@@ -18,26 +18,26 @@ require_once('system/configs/dbcfg.php');
     <div class="feed">
         <div class="feed-item">
             <div class="card">
-
+                <img src="system/static/content/img/test.png" alt="">
             </div>
             <div class="card">
-
-            </div>
-        </div>
-        <div class="feed-item">
-            <div class="card">
-
-            </div>
-            <div class="card">
-
+                <img src="system/static/content/img/test.png" alt="">
             </div>
         </div>
         <div class="feed-item">
             <div class="card">
-
+                <img src="system/static/content/img/test.png" alt="">
             </div>
             <div class="card">
-
+                <img src="system/static/content/img/test.png" alt="">
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="card">
+                <img src="system/static/content/img/test.png" alt="">
+            </div>
+            <div class="card">
+                <img src="system/static/content/img/test.png" alt="">
             </div>
         </div>
     </div>
