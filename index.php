@@ -15,7 +15,32 @@ require_once('system/configs/dbcfg.php');
 </head>
 
 <body>
-    
+    <div class="feed">
+        <div class="feed-item">
+            <div class="card">
+
+            </div>
+            <div class="card">
+
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="card">
+
+            </div>
+            <div class="card">
+
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="card">
+
+            </div>
+            <div class="card">
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

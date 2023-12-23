@@ -1,0 +1,76 @@
+/* 23.12.2023 (c) Alexander Livanov */
+
+.feed {
+    align-items: center;
+}
+
+.feed-item {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 450px;
+    border: 2px solid aqua;
+    margin-top: 50px;
+    display: flex;
+}
+
+.card {
+    width: 50%;
+    margin: 0 10px 0 10px;
+    height: 400px;
+    border: 2px solid red;
+}
+
+@media (max-width: 1200px) {
+    .feed-item {
+            width: 65%;
+            margin-right: auto;
+            margin-left: auto;
+            height: 350px;
+            border: 2px solid aqua;
+            margin-top: 50px;
+            display: flex;
+        }
+    
+        .card {
+            width: 50%;
+            height: 300px;
+            border: 2px solid red;
+        }
+}
+
+@media (max-width: 800px) {
+    .feed-item {
+        width: 85%;
+        margin-right: auto;
+        margin-left: auto;
+        height: 350px;
+        border: 2px solid aqua;
+        margin-top: 50px;
+        display: flex;
+    }
+
+    .card {
+        width: 50%;
+        height: 300px;
+        border: 2px solid red;
+    }
+}
+
+@media (max-width: 600px) {
+    .feed-item {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+        height: 260px;
+        border: 2px solid aqua;
+        margin-top: 50px;
+        display: flex;
+    }
+
+    .card {
+        width: 50%;
+        height: 200px;
+        border: 2px solid red;
+    }
+}
