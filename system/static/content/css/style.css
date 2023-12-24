@@ -8,10 +8,10 @@
     width: 60%;
     margin-right: auto;
     margin-left: auto;
-    height: 450px;
+    height: 100vh;
     /* border: 2px solid black; */
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 5em;
     display: flex;
     filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
     padding: 1em;
@@ -33,6 +33,16 @@
     display: flex;
 }
 
+.meta-box-head {
+    background-color: white;
+    filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .9rem;
+}
+
+.meta-box-head p {
+    margin-left: 5%;
+}
 .plus-btn, .minus-btn {
     width: 50%;
     display: flex;
@@ -41,6 +51,7 @@
     background-color: white;
     border-radius: 5px;
     transition: all 0.6s;
+    padding: .5em;
     margin: 0 5px 0 5px;
 }
 
