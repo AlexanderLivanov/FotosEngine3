@@ -15,6 +15,9 @@ require_once('system/configs/dbcfg.php');
 </head>
 
 <body>
+    <header>
+        <?php require_once('system/static/header.php'); ?>
+    </header>
     <div class="feed">
         <div class="feed-item">
             <div class="img-container">
@@ -121,6 +124,9 @@ require_once('system/configs/dbcfg.php');
             </div>
         </div>
     </div>
+    <footer>
+        <?php require_once('system/static/footer.php'); ?>
+    </footer>
 </body>
 
 </html>
