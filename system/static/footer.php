@@ -1,4 +1,4 @@
-<?php $ver = "1.0.0"; ?>
+<?php $ver = "3.0.1"; ?>
 
 <style>
     .white-link {
@@ -25,9 +25,9 @@
     Запечатлевайте моменты с <a class="white-link" href="https://github.com/AlexanderLivanov/FotosEngine3">FotosWorld!</a>
     <br>
     <br>
-    Работает на <a class="white-link" href="https://github.com/AlexanderLivanov/FotosEngine3">FotosEngine3</a> версии <?php echo $ver; ?>
+    Работает на <a class="white-link" href="https://github.com/AlexanderLivanov/FotosEngine3">FotosEngine</a> версии <?php echo $ver; ?>
     <br>
-    Разрабатывается под лицензией Apache2.0
+    Разрабатывается под лицензией Apache 2.0
     <br>
     2021-2024 (c) <a class="white-link" href="https://github.com/AlexanderLivanov">Alexander Livanov</a>
 </div>
