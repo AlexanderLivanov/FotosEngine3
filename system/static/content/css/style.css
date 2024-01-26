@@ -2,6 +2,7 @@
 
 .feed {
     align-items: center;
+    margin-bottom: 10%;
 }
 
 .feed-item {
@@ -37,7 +38,7 @@
     background-color: white;
     filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .9rem;
+    /* font-size: .9rem; */
 }
 
 .meta-box-head p {
@@ -91,20 +92,21 @@
 }
 
 @media (max-width: 1200px) {
-    .feed-item {
+        .feed-item {
             width: 65%;
             margin-right: auto;
             margin-left: auto;
             height: 350px;
-            border: 2px solid aqua;
-            margin-top: 50px;
+            border-radius: 5px;
+            margin-top: 5em;
             display: flex;
+            filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
+            padding: 1em;
+            font-size: .9rem;
         }
     
         .card {
-            width: 50%;
             height: 300px;
-            border: 2px solid red;
         }
 }
 
@@ -114,32 +116,34 @@
         margin-right: auto;
         margin-left: auto;
         height: 350px;
-        border: 2px solid aqua;
-        margin-top: 50px;
+        border-radius: 5px;
+        margin-top: 5em;
         display: flex;
+        filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
+        padding: 1em;
+        font-size: .7rem;
     }
 
     .card {
-        width: 50%;
         height: 300px;
-        border: 2px solid red;
     }
 }
 
 @media (max-width: 600px) {
     .feed-item {
-        width: 95%;
-        margin-right: auto;
-        margin-left: auto;
-        height: 260px;
-        border: 2px solid aqua;
-        margin-top: 50px;
-        display: flex;
-    }
+            width: 95%;
+            margin-right: auto;
+            margin-left: auto;
+            height: 260px;
+            border-radius: 5px;
+            margin-top: 5em;
+            display: flex;
+            filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
+            padding: 1em;
+            font-size: .7rem;
+        }
 
     .card {
-        width: 50%;
         height: 200px;
-        border: 2px solid red;
     }
 }
