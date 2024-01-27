@@ -12,6 +12,12 @@ class User {
         return $result;
     }
 
+    private function setDataByID($id, $field_name, $data){
+        global $db_connect;
+        $query = $db_connect->prepare("UPDATE users SET $field_name = '$data' WHERE id = $id");
+        $query->execute();
+    }
+
     function isAdmin($id){
         $result = $this->getDataByID($id);
 
@@ -30,9 +36,9 @@ class User {
         return $result['username'];
     }
 
-    // function setUsername(){
-
-    // }
+    function setUsername($id, $data){
+        return $this->setDataByID($id, 'username', $data);
+    }
 
     // function getAV(){
 
