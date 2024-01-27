@@ -10,7 +10,7 @@
 <body>
     <?php 
         require_once('system/static/header.php');
-        require_once('system/static/scripts/models/auth_controller.php');
+        require_once('system/static/scripts/models/main_controller.php');
 
         echo("<br><br>");
         $curr_user = new User();

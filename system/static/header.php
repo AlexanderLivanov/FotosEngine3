@@ -27,6 +27,6 @@
 <div class="cont">
     Совсем скоро здесь будет логотип, но я его пока не сделал (и вряд ли сделаю)
     <div class="header-row">
-        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a href="/twf.php" class="white-link">TwinFeed</a> :: <a href="" class="white-link">Найти&nbsp;кого-то</a> :: <a href="" class="white-link">Мой&nbsp;профиль</a>
+        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a href="/twf.php" class="white-link">TwinFeed</a> :: <a href="" class="white-link">Найти&nbsp;кого-то</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
     </div>
 </div>

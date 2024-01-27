@@ -32,9 +32,10 @@ if(!empty($_POST['register'])){
 
         $result = $query->execute();
         if($result){
-            echo '<p>OK</p>';
+            echo("<p>Регистрация прошла успешно.<br> Сейчас вы будете перенаправлены на страницу входа</p>");
+            echo("<script>setTimeout(function () { window.location.href = 'login.php'; }, 1000);</script>");
         }else{
-            echo '<p>BAD</p>';
+            echo("<p>Ошибка. Проверьте, что всё правильно...</p>");
         }
     }
 }
@@ -55,7 +56,7 @@ if(!empty($_POST['register'])){
         <h1>FotosWorld - Создание учетной записи</h1>
         <input type="text" placeholder="придумайте имя пользователя" name="username" pattern="[A-Za-z._-]{4,}" required>
         <input type="password" placeholder="придумайте пароль" name="passwd" minlength="8" required>
-        <input type="text" placeholder="реф.код" name="ref" pattern="[A-Za-z]{4,}">
+        <input type="text" placeholder="кто пригласил?" name="ref" pattern="[A-Za-z]{4,}">
         <input type="submit" name="register" value="Готово">
     </form>
 </body>
