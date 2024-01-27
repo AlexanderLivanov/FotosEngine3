@@ -14,8 +14,9 @@
 
         echo("<br><br>");
         $curr_user = new User();
-        // $curr_user->getUsername(1);
-        $curr_user->isAdmin(1);
+        echo $curr_user->getID(1) . "<br>";
+        echo $curr_user->getUsername(1) . "<br>";
+        
     ?>    
 </body>
 

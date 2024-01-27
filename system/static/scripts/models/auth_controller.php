@@ -3,40 +3,32 @@
 require_once('system/configs/dbcfg.php');
 
 class User {
-    public $id, $username;
-
-    function isAdmin($id){
-        global $db_connect_obsolete;
-        echo("Current user ");
-        // $db_request = "SELECT * FROM users WHERE id = $id";
-        // $db_result = mysqli_query($db_connect_obsolete, $db_request);
-
-        $query = $db_connect_obsolete->prepare("SELECT * FROM users WHERE id=" . $id);
+    private function getDataByID($id){
+        global $db_connect;
+        $query = $db_connect->prepare("SELECT * FROM users WHERE id=" . $id);
         $query->execute();
         $result = $query->fetch(PDO::FETCH_ASSOC);
-        echo($result['role']);
+
+        return $result;
     }
 
-    // function getID(){
+    function isAdmin($id){
+        $result = $this->getDataByID($id);
 
-    // }
+        return $result['role'];
+    }
 
-    // function getUsername($id){
-    //     global $db_connect_obsolete;
-    //     echo("Current uname is ");
-    //     $db_request = "SELECT * FROM users WHERE id = $id";
-    //     $db_result = mysqli_query($db_connect_obsolete, $db_request);
+    function getID($id){
+        $result = $this->getDataByID($id);
 
-    //     $rows = mysqli_fetch_all($db_result, MYSQLI_ASSOC);
+        return $result['id'];
+    }
 
-    //     if(!$db_result) {
-    //         echo("Неизвестная ошибка...<br>");
-    //     }
+    function getUsername($id){
+        $result = $this->getDataByID($id);
 
-    //     foreach($rows as $row){
-    //         print($row['username'] . "<br>");
-    //     }
-    // }
+        return $result['username'];
+    }
 
     // function setUsername(){
 

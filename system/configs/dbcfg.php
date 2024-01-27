@@ -16,7 +16,7 @@ function dbConnect(){
     }
 }
 
-$db_connect_obsolete = dbConnect();
+$db_connect = dbConnect();
 
 function getServerTime(){
     return date('d.m.Y H:i', time());
