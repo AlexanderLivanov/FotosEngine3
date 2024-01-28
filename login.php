@@ -13,9 +13,8 @@ if (isset($_POST['login'])) {
     } else {
         if (password_verify($password, $result['passwd'])) {
             $_SESSION['uid'] = $result['id'];
-            // $query = $connection->prepare("UPDATE users SET ip='" . $_SERVER['REMOTE_ADDR'] . "' WHERE username='" . $result['username'] . "'");
+            $query = $db_connect->prepare("UPDATE users SET ip='" . $_SERVER['REMOTE_ADDR'] . "' WHERE username='" . $result['username'] . "'");
             $query->execute();
-            setcookie("uid", $result['uid'], time() + 7 * 24 * 3600);
             header('Location: /');
             exit();
         } else {
@@ -46,7 +45,7 @@ if (isset($_POST['login'])) {
                 <input type="password" name="password" required placeholder="Пароль" />
             </div>
             <button type="submit" name="login" value="login">Войти</button>
-            <p>Ещё нет аккаунта? <a href="register">Зарегистрируйтесь!</a></p>
+            <p>Ещё нет аккаунта? <a href="register.php">Зарегистрируйтесь!</a></p>
         </form>
     </div>
 </body>

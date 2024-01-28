@@ -14,9 +14,9 @@
 
         echo("<br><br>");
         $curr_user = new User();
-        echo $curr_user->getID(1) . "<br>";
-        echo $curr_user->getUsername(1) . "<br>";
-        // $curr_user->setUsername(1, 'Thecreator');
+        if(!empty($_SESSION['uid'])){
+            echo("Здравствуйте, " . $curr_user->getUsername($_SESSION['uid']));
+        }
     ?>    
 </body>
 

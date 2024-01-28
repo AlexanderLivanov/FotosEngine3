@@ -1,4 +1,5 @@
 <?php
+require_once('system/configs/dbcfg.php');
 
 if(!empty($_SESSION['uid'])){
     require_once('system/static/header.php');
@@ -9,7 +10,8 @@ if(!empty($_SESSION['uid'])){
     echo $curr_user->getID($_SESSION['uid']) . "<br>";
     echo $curr_user->getUsername($_SESSION['uid']) . "<br>";
 }else{
-    echo("</p>Вы не вошли в аккаунт</p>");
+    require_once('system/static/header.php');
+    echo("<br></p>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</p>");
 }
 
 ?>
