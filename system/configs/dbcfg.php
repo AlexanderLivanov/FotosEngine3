@@ -10,7 +10,7 @@ date_default_timezone_set('Europe/Moscow');
 
 function dbConnect(){
     try {
-        return new PDO('mysql:dbname=fotosworld;host=localhost', 'root', '');
+        return new PDO('mysql:dbname=fotosworld;host=localhost', 'leo', 'BigLokkWasHere!');
     } catch (PDOException $e) {
         echo($e->getMessage());
     }
