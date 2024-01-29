@@ -62,5 +62,3 @@ if(!empty($_POST['register'])){
 </body>
 
 </html>
-
-<!-- Юле: спасибо) -->
