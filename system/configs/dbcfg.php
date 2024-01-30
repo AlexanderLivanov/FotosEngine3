@@ -3,14 +3,17 @@
 
 session_start();
 
+require_once('creds.php');
+
 date_default_timezone_set('Europe/Moscow');
 
 // global $db_connect_obsolete;
 // $db_connect_obsolete = mysqli_connect("localhost", "root", "", "fotosworld");
 
 function dbConnect(){
+    global $user, $passwd;
     try {
-        return new PDO('mysql:dbname=fotosworld;host=localhost', 'leo', 'BigLokkWasHere!');
+        return new PDO('mysql:dbname=fotosworld;host=localhost', $user, $passwd);
     } catch (PDOException $e) {
         echo($e->getMessage());
     }
