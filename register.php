@@ -53,12 +53,11 @@ if(!empty($_POST['register'])){
 <body>
     <form method="post" class="auth_form">
         <h1>FotosWorld - Создание учетной записи</h1>
-        <input type="text" placeholder="придумайте имя пользователя" name="username" pattern="[A-Za-z._-]{5,}" required>
+        <input type="text" placeholder="придумайте имя пользователя" name="username" pattern="[A-Za-z._-1234567890]{4,}" required>
         <input type="password" placeholder="придумайте пароль" name="passwd" minlength="8" required>
-        <input type="text" placeholder="кто пригласил?" name="ref" pattern="[A-Za-z._-]{5,}">
+        <input type="text" placeholder="кто пригласил?" name="ref" pattern="[A-Za-z._-1234567890]{4,}">
         <input type="submit" name="register" value="Готово">
     </form>
 </body>
 
 </html>
-
