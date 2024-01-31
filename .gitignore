@@ -2,3 +2,4 @@ LICENSE
 README.MD
 system/configs/creds.php
 users/*
+system/usercontent/*
