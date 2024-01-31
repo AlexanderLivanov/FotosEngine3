@@ -162,3 +162,17 @@
     border-radius: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
+/* LOGIN/REGISTER PAGES CSS */
+.main-container {
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 30vh 30vw 0 30vw;
+    padding: 5em 1em 5em 1em;
+    border-radius: 15px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 100px rgb(150, 150, 150);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
