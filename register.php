@@ -2,6 +2,7 @@
 
 <?php
 require_once('system/configs/dbcfg.php');
+require_once('system/static/scripts/models/storage_controller.php');
 
 if(!empty($_POST['register'])){
 
@@ -32,6 +33,7 @@ if(!empty($_POST['register'])){
 
         if($result){
             echo("<p>Регистрация прошла успешно.<br> Сейчас вы будете перенаправлены на страницу входа</p>");
+            allocStorage($username);
             echo("<script>setTimeout(function () { window.location.href = 'login.php'; }, 1000);</script>");
         }else{
             echo("<p>Ошибка. Проверьте, что всё правильно...</p>");
