@@ -36,5 +36,3 @@
         <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a href="/twf.php" class="white-link">TwinFeed</a> :: <a href="" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
     </div>
 </div>
-
-
