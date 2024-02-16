@@ -12,7 +12,7 @@
     <?php 
         require_once('system/static/header.php');
         require_once('system/static/scripts/models/main_controller.php');
-
+k
         echo("<br><br>");
         $curr_user = new User();
         if(!empty($_SESSION['uid'])){
