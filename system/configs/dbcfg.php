@@ -1,6 +1,5 @@
 <!-- 10.11.2023 (c) Alexander Livanov -->
 <?php
-
 session_start();
 
 require_once('creds.php');
