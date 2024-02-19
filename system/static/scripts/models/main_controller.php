@@ -1,6 +1,6 @@
 <?php
 // 27.01.2024 (c) Alexander Livanov
-// require_once('system/configs/dbcfg.php');ы
+// require_once('system/configs/dbcfg.php');
 
 class User
 {
