@@ -1,5 +1,5 @@
 <?php
-//require_once('system/configs/dbcfg.php');
+require_once('system/configs/dbcfg.php');
 
 if(!empty($_SESSION['uid'])){
     require_once('system/static/header.php');

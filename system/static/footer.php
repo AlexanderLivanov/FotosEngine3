@@ -1,6 +1,6 @@
 <?php
     // SemVer specification: global_version.design.tech_update
-    $ver = "3.2.3"; 
+    $ver = "3.2.4-openbeta";
 ?>
 <html>
 <style>
