@@ -10,9 +10,9 @@ date_default_timezone_set('Europe/Moscow');
 // $db_connect_obsolete = mysqli_connect("localhost", "root", "", "fotosworld");
 
 function dbConnect(){
-    global $user, $passwd;
+    global $user, $passwd, $db_name;
     try {
-        return new PDO('mysql:dbname=fotosworld;host=localhost', $user, $passwd);
+        return new PDO('mysql:dbname='. $db_name . ';host=localhost', $user, $passwd);
     } catch (PDOException $e) {
         echo($e->getMessage());
     }
