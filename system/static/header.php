@@ -30,11 +30,17 @@
         color: black;
         transition: all 0.6s;
     }
+
+    .gray-link {
+        text-decoration: none;
+        color: gray;
+        font-family: cursive;
+    }
 </style>
 <div class="cont">
     <div class="header-main"><h1>Fotos.World (beta)</h1></div>
     <div class="header-row">
-        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a href="/twf.php" class="white-link">TwinFeed</a> :: <a href="" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
+        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a class="gray-link" disabled>TwinFeed</a> :: <a class="gray-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
     </div>
 </div>
 </html>
