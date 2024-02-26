@@ -10,3 +10,5 @@ RewriteRule ^(.*)$ $1.php
 <FilesMatch ".gitignore">
     Deny from all
 </FilesMatch>
+
+ErrorDocument 404 /404
