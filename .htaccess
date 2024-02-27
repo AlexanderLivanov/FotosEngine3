@@ -1,14 +1,13 @@
-<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|php|html)$">
-Header set Cache-Control "max-age=2592000"
-</FilesMatch>
+#<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|php|html)$">
+#Header set Cache-Control "max-age=2592000"
+#</FilesMatch>
 
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.*)$ $1.php
 
 <FilesMatch ".gitignore">
     Deny from all
 </FilesMatch>
 
-ErrorDocument 404 /404
