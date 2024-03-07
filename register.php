@@ -36,7 +36,7 @@ if (!empty($_POST['register'])) {
         if ($result) {
             echo ('<p>ОК. Сейчас вы будете перенаправлены на страницу входа</p>');
             allocStorage($username);
-            // echo ("<script>setTimeout(function () { window.location.href = 'login'; }, 1000);</script>");
+            echo ("<script>setTimeout(function () { window.location.href = 'login'; }, 1000);</script>");
         } else {
             echo ('<script>alert("Проверьте форму ещё раз");</script>');
         }
