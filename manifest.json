@@ -1,0 +1,10 @@
+{
+  "name": "Fotos World",
+  "short_name": "FoWo",
+  "theme_color": "#0072ff",
+  "background_color": "#0072ff",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}

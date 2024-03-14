@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="system/static/content/css/style.css">
+<link rel="manifest" href="manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="application-name" content="PWA Workshop" />
+<meta name="apple-mobile-web-app-title" content="PWA Workshop" />
     <title>Fotos.World</title>
 </head>
 
@@ -24,6 +29,7 @@
         <h2>Совсем скоро здесь будет контент!</h1>
         <h4>Просто я пока не добавил возможность его публикации...</h3>
     </div>
+	<script src="scripts.js"></script>
 	<?php
 	require_once('system/static/footer.php');
 	?>

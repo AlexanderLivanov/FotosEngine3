@@ -1,13 +1,8 @@
-#<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|php|html)$">
-#Header set Cache-Control "max-age=2592000"
-#</FilesMatch>
-
-#RewriteEngine on
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}.php -f
-#RewriteRule ^(.*)$ $1.php
 
 <FilesMatch ".gitignore">
     Deny from all
 </FilesMatch>
 
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
