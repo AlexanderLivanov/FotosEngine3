@@ -11,7 +11,7 @@ if(!empty($_SESSION['uid'])){
     echo $curr_user->getUsername($_SESSION['uid']) . "<br>";
 }else{
     require_once('system/static/header.php');
-    echo("<br></p>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</p>");
+    echo("<br></p>Вы не вошли в аккаунт. Вы можете войти <a href='/login'>здесь</p>");
 }
 
 ?>

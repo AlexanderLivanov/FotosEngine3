@@ -8,6 +8,7 @@ function setStoragePath(){
 function allocStorage($username){
     mkdir('users/' . $username);
     mkdir('system/usercontent/' . $username);
-    copy('system/static/content/userpage__template.php', 'users/' . $username . '/index.php');
+    $userpage_file = 'users/' . $username . '/index.php';
+    $userpage_content = '<?php require_once($_SERVER["DOCUMENT_ROOT"] . \'/system/static/content/userpage_template.php\'); ?>';
+    file_put_contents($userpage_file, $userpage_content);
 }
-?>
