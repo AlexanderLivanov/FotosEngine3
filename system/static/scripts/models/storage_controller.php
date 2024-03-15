@@ -12,3 +12,4 @@ function allocStorage($username){
     $userpage_content = '<?php require_once($_SERVER["DOCUMENT_ROOT"] . \'/system/static/content/userpage_template.php\'); ?>';
     file_put_contents($userpage_file, $userpage_content);
 }
+

@@ -23,10 +23,6 @@
             echo("Здравствуйте, " . $curr_user->getUsername($uid));
         }
 	?>
-    <!-- <div class="notify-banner">
-        <h2>Совсем скоро здесь будет контент!</h1>
-        <h4>Просто я пока не добавил возможность его публикации...</h3>
-    </div> -->
 	<?php
 	require_once('system/static/footer.php');
 	?>
