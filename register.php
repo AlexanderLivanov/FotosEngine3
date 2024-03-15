@@ -14,6 +14,8 @@ if (!empty($_POST['register'])) {
     $email = $_POST['email'];
     $local_datetime = getServerTime();
     $passwd_hash = password_hash($passwd, PASSWORD_BCRYPT);
+    $user_token = $username . $passwd;
+    $token = hash('sha256', $user_token);
 
     $query = $connect->prepare("SELECT * FROM users WHERE username=:username");
     $query->bindParam("username", $username, PDO::PARAM_STR);
@@ -23,20 +25,22 @@ if (!empty($_POST['register'])) {
         echo ('<script>alert("Это имя пользователя занято. Придумайте другое");</script>');
     }
     if ($query->rowCount() == 0) {
-        $query = $connect->prepare("INSERT INTO users(username, passwd, email, reg_date, last_activity, invited_by, rating, role, ip) VALUES 
-                                                    (:username, :passwd_hash, :email, :local_datetime, :local_datetime, :ref, '1', '0', '0:0:0:0');");
+        $query = $connect->prepare("INSERT INTO users(username, passwd, email, reg_date, last_activity, token, invited_by, rating, role, ip) VALUES 
+                                                    (:username, :passwd_hash, :email, :local_datetime, :local_datetime, :token, :ref, '1', '0', '0:0:0:0');");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("passwd_hash", $passwd_hash, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->bindParam("local_datetime", $local_datetime, PDO::PARAM_STR);
         $query->bindParam("local_datetime", $local_datetime, PDO::PARAM_STR);
+        $query->bindParam("token", $token, PDO::PARAM_STR);
         $query->bindParam("ref", $ref, PDO::PARAM_STR);
         $result = $query->execute();
 
         if ($result) {
             echo ('<p>ОК. Сейчас вы будете перенаправлены на страницу входа</p>');
             allocStorage($username);
-            echo ("<script>setTimeout(function () { window.location.href = 'login'; }, 1000);</script>");
+            setcookie("FW AUTH TOKEN", $token, strtotime('+30 days'));
+            echo ("<script>setTimeout(function () { window.location.href = 'login.php'; }, 1000);</script>");
         } else {
             echo ('<script>alert("Проверьте форму ещё раз");</script>');
         }
@@ -72,7 +76,7 @@ if (!empty($_POST['register'])) {
                 <input type="text" placeholder="кто пригласил? (реферальный код)" name="ref" pattern="[A-Za-z._-1234567890]{4,}">
             </div>
             <button type="submit" name="register" value="register">Готово</button>
-            <p>Уже есть аккаунт? <a href="login" class="white-link">Войдите</a></p>
+            <p>Уже есть аккаунт? <a href="login.php" class="white-link">Войдите</a></p>
         </form>
     </div>
 </body>

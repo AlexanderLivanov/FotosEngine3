@@ -1,17 +1,36 @@
-<?php
-require_once('system/configs/dbcfg.php');
+<!DOCTYPE html>
+<html lang="en">
 
-if(!empty($_SESSION['uid'])){
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="system/static/content/css/style.css">
+    <link rel="icon" href="appicon.png">
+    <title>Fotos.World - Профиль</title>
+</head>
+
+<body>
+    <?php
+    require_once('system/configs/dbcfg.php');
     require_once('system/static/header.php');
     require_once('system/static/scripts/models/main_controller.php');
 
     echo ("<br><br>");
     $curr_user = new User();
-    echo $curr_user->getID($_SESSION['uid']) . "<br>";
-    echo $curr_user->getUsername($_SESSION['uid']) . "<br>";
-}else{
-    require_once('system/static/header.php');
-    echo("<br></p>Вы не вошли в аккаунт. Вы можете войти <a href='/login'>здесь</p>");
-}
+    if (!empty($_SESSION['uid'])) {
+        echo ("<br><br>");
+        $curr_user = new User();
+        echo $curr_user->getID($_SESSION['uid']) . "<br>";
+        echo $curr_user->getUsername($_SESSION['uid']) . "<br>";
+    } else {
+        echo ("<br><p style='text-align: center;'>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</a></p>");
+    }
+    ?>
 
+
+<?php
+    require_once('system/static/footer.php');
 ?>
+</body>
+
+</html>

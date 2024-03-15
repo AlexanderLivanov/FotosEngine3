@@ -29,18 +29,23 @@
     .white-link:hover {
         color: black;
         transition: all 0.6s;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .gray-link {
         text-decoration: none;
         color: gray;
         font-family: cursive;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 </style>
 <div class="cont">
-    <div class="header-main"><h1>Fotos.World (beta)</h1></div>
+    <div class="header-main">
+        <h1>Fotos.World (beta)</h1>
+    </div>
     <div class="header-row">
-        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a class="gray-link" disabled>TwinFeed</a> :: <a class="gray-link">Поиск</a> :: <a href="/profile" class="white-link">Мой&nbsp;профиль</a>
+        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a class="gray-link" disabled>TwinFeed</a> :: <a href="/explore.php" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
     </div>
 </div>
+
 </html>
