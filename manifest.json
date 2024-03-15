@@ -6,5 +6,15 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/"
+  "start_url": "/",
+  "id": "fw",
+  "categories": [
+    "photo"
+  ],
+  "icons": [
+    {
+      "src": "appicon.png",
+      "sizes": "512x512"
+    }
+  ]
 }
