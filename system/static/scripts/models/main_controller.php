@@ -1,6 +1,5 @@
 <?php
 // 27.01.2024 (c) Alexander Livanov
-// require_once('system/configs/dbcfg.php');
 
 class User
 {
@@ -66,8 +65,16 @@ class User
     // function register(){
 
     // }
+    function findUserByToken($tokenHash){
+        global $db_connect;
+        $query = $db_connect->prepare("SELECT * FROM users WHERE token='" . $tokenHash . "'");
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
 
-    // function auth(){
+        return $result['id'];
+    }
 
-    // }
+    function auth(){
+
+    }
 }

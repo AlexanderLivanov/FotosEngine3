@@ -17,14 +17,16 @@
 
         echo("<br><br>");
         $curr_user = new User();
-        if(!empty($_SESSION['uid'])){
-            echo("Здравствуйте, " . $curr_user->getUsername($_SESSION['uid']));
+        if(!empty($curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']))){
+            $_SESSION['uid'] = $curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
+            $uid = $_SESSION['uid'];
+            echo("Здравствуйте, " . $curr_user->getUsername($uid));
         }
 	?>
-    <div class="notify-banner">
+    <!-- <div class="notify-banner">
         <h2>Совсем скоро здесь будет контент!</h1>
         <h4>Просто я пока не добавил возможность его публикации...</h3>
-    </div>
+    </div> -->
 	<?php
 	require_once('system/static/footer.php');
 	?>

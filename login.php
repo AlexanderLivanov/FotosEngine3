@@ -12,10 +12,13 @@ if (isset($_POST['login'])) {
         echo '<script>alert("Неправильный логин или пароль");</script>';
     } else {
         if (password_verify($password, $result['passwd'])) {
+            $user_token = $username . $password;
+            $token = hash('sha256', $user_token);
             $_SESSION['uid'] = $result['id'];
             $query = $db_connect->prepare("UPDATE users SET ip='" . $_SERVER['REMOTE_ADDR'] . "' WHERE username='" . $result['username'] . "'");
             $query->execute();
-            // header('Location: /');
+            setcookie("FW_AUTH_TOKEN", $token, strtotime('+30 days'));
+            header('Location: /');
             exit();
         } else {
             echo '<script>alert("Неправильный логин или пароль");</script>';

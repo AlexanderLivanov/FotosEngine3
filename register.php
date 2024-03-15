@@ -39,7 +39,7 @@ if (!empty($_POST['register'])) {
         if ($result) {
             echo ('<p>ОК. Сейчас вы будете перенаправлены на страницу входа</p>');
             allocStorage($username);
-            setcookie("FW AUTH TOKEN", $token, strtotime('+30 days'));
+            setcookie("FW_AUTH_TOKEN", $token, strtotime('+30 days'));
             echo ("<script>setTimeout(function () { window.location.href = 'login.php'; }, 1000);</script>");
         } else {
             echo ('<script>alert("Проверьте форму ещё раз");</script>');

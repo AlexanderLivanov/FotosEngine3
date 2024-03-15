@@ -17,13 +17,11 @@
 
     echo ("<br><br>");
     $curr_user = new User();
-    if (!empty($_SESSION['uid'])) {
-        echo ("<br><br>");
-        $curr_user = new User();
-        echo $curr_user->getID($_SESSION['uid']) . "<br>";
-        echo $curr_user->getUsername($_SESSION['uid']) . "<br>";
+    if (!empty($_COOKIE['FW_AUTH_TOKEN'])) {
+        echo $_COOKIE['FW_AUTH_TOKEN'];
     } else {
         echo ("<br><p style='text-align: center;'>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</a></p>");
+        echo $_COOKIE['FW_AUTH_TOKEN'];
     }
     ?>
 
