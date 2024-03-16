@@ -17,9 +17,15 @@
 
         echo("<br><br>");
         $curr_user = new User();
-        if(!empty($curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']))){
+        
+        // check if FW_AUTH_TOKEN exsists
+        if(!empty($_COOKIE['FW_AUTH_TOKEN'])){
             $_SESSION['uid'] = $curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
             $uid = $_SESSION['uid'];
+        }
+
+        // check if $uid exsists
+        if(!empty($uid)){
             echo("Здравствуйте, " . $curr_user->getUsername($uid));
         }
 	?>

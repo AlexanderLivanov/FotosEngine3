@@ -75,6 +75,12 @@ class User
     }
 
     function auth(){
-
+        if (!empty($_COOKIE['FW_AUTH_TOKEN'])) {
+            $_SESSION['uid'] = $this->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
+            $uid = $_SESSION['uid'];
+            return true;
+        } else {
+            return false;
+        }
     }
 }

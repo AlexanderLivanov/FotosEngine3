@@ -17,8 +17,8 @@
 
     echo ("<br><br>");
     $curr_user = new User();
-    if (!empty($_COOKIE['FW_AUTH_TOKEN'])) {
-        echo "HI";
+    if ($curr_user->auth()){
+        echo('*так и должно быть*');
     } else {
         echo ("<br><p style='text-align: center;'>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</a></p>");
     }
