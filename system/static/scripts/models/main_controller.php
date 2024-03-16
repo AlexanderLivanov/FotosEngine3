@@ -67,7 +67,7 @@ class User
     // }
     function findUserByToken($tokenHash){
         global $db_connect;
-        $query = $db_connect->prepare("SELECT * FROM users WHERE token='" . $tokenHash . "'");
+        $query = $db_connect->prepare("SELECT * FROM users WHERE token='" . hash('sha256', $tokenHash) . "'");
         $query->execute();
         $result = $query->fetch(PDO::FETCH_ASSOC);
 

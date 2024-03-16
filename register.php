@@ -16,6 +16,7 @@ if (!empty($_POST['register'])) {
     $passwd_hash = password_hash($passwd, PASSWORD_BCRYPT);
     $user_token = $username . $passwd;
     $token = hash('sha256', $user_token);
+    $token_hash = hash('sha256', $token);
 
     $query = $connect->prepare("SELECT * FROM users WHERE username=:username");
     $query->bindParam("username", $username, PDO::PARAM_STR);
@@ -32,7 +33,7 @@ if (!empty($_POST['register'])) {
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->bindParam("local_datetime", $local_datetime, PDO::PARAM_STR);
         $query->bindParam("local_datetime", $local_datetime, PDO::PARAM_STR);
-        $query->bindParam("token", $token, PDO::PARAM_STR);
+        $query->bindParam("token", $token_hash, PDO::PARAM_STR);
         $query->bindParam("ref", $ref, PDO::PARAM_STR);
         $result = $query->execute();
 
