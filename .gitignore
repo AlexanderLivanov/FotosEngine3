@@ -2,3 +2,4 @@ users/*/
 system/usercontent/*
 system/configs/creds.php
 *.md
+LICENSE.md
