@@ -41,7 +41,11 @@
 </style>
 <div class="cont">
     <div class="header-main">
-        <h1>Fotos.World (beta)</h1>
+        <h1>
+            <font color="#0072ff">Fotos</font>.<font color="#0072ff">World</font> (beta)
+        </h1>
+        <h6 color="">Галерея ваших <font color="#0072ff">работ</font> • <font color="#0072ff">талантов</font> • <font color="#0072ff">достижений</font>
+        </h6>
     </div>
     <div class="header-row">
         <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a class="gray-link" disabled>TwinFeed</a> :: <a href="/explore.php" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
