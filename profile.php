@@ -18,7 +18,7 @@
     echo ("<br><br>");
     $curr_user = new User();
     if ($curr_user->auth()){
-        echo('*так и должно быть*');
+        require_once('system/static/userprofile.php');
     } else {
         echo ("<br><p style='text-align: center;'>Вы не вошли в аккаунт. Вы можете войти <a href='/login.php'>здесь</a></p>");
     }

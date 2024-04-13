@@ -1,6 +1,6 @@
 <?php
     // SemVer specification: global_version.design.tech_update
-    $ver = "3.2.7-openbeta";
+    $ver = "3.3.8-openbeta";
 ?>
 <html>
 <style>
@@ -27,7 +27,7 @@
     <br>
     Работает на FotosEngine версии <?php echo($ver); ?>
     <br>
-    Находится под лицензией Apache 2.0
+    Разрабатывается под лицензией Apache 2.0
     <br>
     2021-2024 (c) <a class="white-link" href="https://github.com/AlexanderLivanov">Alexander Livanov</a>
 </div>

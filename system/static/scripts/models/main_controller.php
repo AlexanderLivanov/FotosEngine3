@@ -46,6 +46,18 @@ class User
         return $this->setDataByID($id, 'username', $data);
     }
 
+    function getLastActivity($id){
+        return $this->getDataByID($id)['last_activity'];        
+    }
+
+    function getUserRating($id){
+        return $this->getDataByID($id)['rating'];        
+    }
+
+    function whoInvited($id){
+        return $this->getDataByID($id)['invited_by'];
+    }
+
     // function getAV(){
 
     // }
@@ -58,13 +70,6 @@ class User
 
     // }
 
-    // function login(){
-
-    // }
-
-    // function register(){
-
-    // }
     function findUserByToken($tokenHash){
         global $db_connect;
         $query = $db_connect->prepare("SELECT * FROM users WHERE token='" . hash('sha256', $tokenHash) . "'");
@@ -75,6 +80,7 @@ class User
     }
 
     function auth(){
+        global $uid;
         if (!empty($_COOKIE['FW_AUTH_TOKEN'])) {
             $_SESSION['uid'] = $this->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
             $uid = $_SESSION['uid'];
