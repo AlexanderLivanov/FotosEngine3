@@ -15,9 +15,9 @@
         </div>
         <div class="info">
             <div class="row">
-                <p>Репутация участника: <?= $curr_user->getUserRating($uid); ?></p>
-                <p>Участник сообщества с <?= $curr_user->getRegDate($uid); ?></p>
-                <p>Последний раз в сети: <?= $curr_user->getLastActivity($uid); ?></p>
+                <p><b>Репутация участника:</b> <?= $curr_user->getUserRating($uid); ?></p>
+                <p><b>Участник сообщества </b> с <?= $curr_user->getRegDate($uid); ?></p>
+                <p><b>Последний раз в сети:</b> <?= $curr_user->getLastActivity($uid); ?></p>
             </div>
         </div>
         <div class="tabs">
