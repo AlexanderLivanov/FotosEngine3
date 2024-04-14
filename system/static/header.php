@@ -14,6 +14,7 @@
         border-radius: 0 0 15px 15px;
         font-size: 1rem;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        line-height: 0.1;
     }
 
     .header-main {
@@ -48,7 +49,7 @@
         </h6>
     </div>
     <div class="header-row">
-        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a class="gray-link" disabled>TwinFeed</a> :: <a href="/explore.php" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
+        <a href="/" class="white-link">Общая&nbsp;лента</a> :: <a href="/explore.php" class="white-link">Поиск</a> :: <a href="/profile.php" class="white-link">Мой&nbsp;профиль</a>
     </div>
 </div>
 

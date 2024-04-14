@@ -41,8 +41,7 @@ class User
         return $result['username'];
     }
 
-    function setUsername($id, $data)
-    {
+    function setUsername($id, $data){
         return $this->setDataByID($id, 'username', $data);
     }
 
@@ -56,6 +55,10 @@ class User
 
     function whoInvited($id){
         return $this->getDataByID($id)['invited_by'];
+    }
+
+    function getRegDate($id){
+        return $this->getDataByID($id)['reg_date'];
     }
 
     // function getAV(){

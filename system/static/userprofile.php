@@ -8,15 +8,45 @@
 </head>
 
 <body>
-    <div class="user-profile-dock">
-        <img src="appicon.png" alt="">
-        <p><?= $curr_user->getUsername($uid); ?></p>
-        <div class="user-meta">
-            <p>Рейтинг: <?= $curr_user->getUserRating($uid); ?></p>
-            <p>Пригласил(а): <?= $curr_user->whoInvited($uid); ?></p>
-            <p>Был(а) в сети: <?= $curr_user->getLastActivity($uid); ?></p>
+    <div class="profile">
+        <div class="avatar">
+            <img src="appicon.png" alt="User Avatar">
+            <h2><?= $curr_user->getUsername($uid); ?></h2>
+        </div>
+        <div class="info">
+            <div class="row">
+                <p>Репутация участника: <?= $curr_user->getUserRating($uid); ?></p>
+                <p>Участник сообщества с <?= $curr_user->getRegDate($uid); ?></p>
+                <p>Последний раз в сети: <?= $curr_user->getLastActivity($uid); ?></p>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('gallery')">Галерея</button>
+            <button class="tab-btn" onclick="openTab('text')">Посты</button>
+        </div>
+        <div id="gallery" class="tab-content">
+            <h3>Галерея</h3>
+        </div>
+        <div id="text" class="tab-content" style="display: none;">
+            <h3>Посты</h3>
         </div>
     </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 
 </html>
