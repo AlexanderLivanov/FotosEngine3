@@ -27,7 +27,7 @@ if (!empty($_POST['register'])) {
     }
     if ($query->rowCount() == 0) {
         $query = $connect->prepare("INSERT INTO users(username, passwd, email, reg_date, last_activity, token, invited_by, rating, role, ip) VALUES 
-                                                    (:username, :passwd_hash, :email, :local_datetime, :local_datetime, :token, :ref, '1', '0', '0:0:0:0');");
+                                                    (:username, :passwd_hash, :email, :local_datetime, :local_datetime, :token, :ref, '0', '0', '0:0:0:0');");
         $query->bindParam("username", $username, PDO::PARAM_STR);
         $query->bindParam("passwd_hash", $passwd_hash, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);

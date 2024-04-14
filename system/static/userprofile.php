@@ -1,5 +1,5 @@
 <?php
-
+// 13.03.2024 (c) Alexander Livanov
 ?>
 <html>
 
@@ -22,13 +22,17 @@
         </div>
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('gallery')">Галерея</button>
-            <button class="tab-btn" onclick="openTab('text')">Посты</button>
+            <button class="tab-btn" onclick="openTab('posts')">Посты</button>
+            <button class="tab-btn" onclick="openTab('info')">Настройки</button>
         </div>
         <div id="gallery" class="tab-content">
             <h3>Галерея</h3>
         </div>
-        <div id="text" class="tab-content" style="display: none;">
+        <div id="posts" class="tab-content" style="display: none;">
             <h3>Посты</h3>
+        </div>
+        <div id="info" class="tab-content" style="display: none;">
+            <h3>Настройки аккаунта</h3>
         </div>
     </div>
 
