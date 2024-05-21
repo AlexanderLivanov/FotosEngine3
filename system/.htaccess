@@ -1,1 +1,4 @@
 Deny from all
+<Files "avatar.png" "avatar.jpg" "avatar.gif" "avatar.PNG" "avatar.JPG" "avatar.GIF">
+    Allow from all
+</Files>

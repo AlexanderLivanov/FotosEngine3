@@ -3,3 +3,4 @@ system/usercontent/*
 system/configs/creds.php
 *.md
 promo/
+users.sql

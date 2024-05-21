@@ -106,44 +106,32 @@
 
 <?php
 require_once('system/configs/dbcfg.php');
-function printUser($users)
+function printUsers($users)
 {
-    global $db_connect;
-
-    foreach ($users as $user) {
-        print($user);
-        // $q = "SELECT * FROM `users` WHERE username = '$user[0]'";
-        // $req = $db_connect->prepare($q);
-        // $req->execute();
-
-        // $res = $req->fetch();
-        // echo ('<a href="users/' . $user[0] . '">');
-        // echo ('<div style="border-radius: 5px; text-align: center; padding: .5em;">');
-        // echo ('<div id="profile-banner">');
-        // echo ('
-        //         <div id="profile-avatar">
-        //             <img src="content/' . $user[1] . '/avatar.png">
-        //         </div>
-        //     ');
-        // echo ('<div style="padding: 1em;">');
-        // echo ('<h1>' . $user[1] . '</h1>');
-        // echo ('<h3>Участник сообщества с ' . $res[4] . "</h3><h3> (" . intval((time() - strtotime($res[4])) / 86400) . ' дней назад) &nbsp;</h3>');
-        // echo ('</div>');
-        // echo ('</div>');
-        // echo ('</div>');
-        // echo ('</a>');
+    foreach($users as $user){
+        echo ('<div style="border-radius: 5px; text-align: center; padding: .5em;">');
+        echo ('<div id="profile-banner">');
+        echo ('
+                <div id="profile-avatar">
+                    <img src="system/usercontent/' . $user['username'] . '/avatar.png">
+                </div>
+            ');
+        echo ('<div style="padding: 1em;">');
+        echo ('<h1>' . $user['username'] . '</h1>');
+        echo ('<h3>Последний раз в сети: ' . $user['last_activity'] . '</h3>');
+        echo ('</div>');
+        echo ('</div>');
+        echo ('</div>');
     }
 }
 
-$uname = "";
-
-if (!empty($_POST['username']) or !empty($_GET['u'])) {
+if (!empty($_POST['username'])) {
     $search_username = $_POST['username'];
-    $query = $db_connect->prepare("SELECT username FROM `users` WHERE username LIKE '$search_username%'");
+    $query = $db_connect->prepare("SELECT username, last_activity FROM `users` WHERE username LIKE '$search_username%'");
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    printUser($result);
+    printUsers($result);
 
     if (empty($result)) {
         echo ('
@@ -153,7 +141,7 @@ if (!empty($_POST['username']) or !empty($_GET['u'])) {
     <div class="search" style="text-align: center; background-color: whitesmoke; height: 100px; margin-right: 10%; margin-left: 10%; padding: 1em; border-radius: 40px;">
         <p>Упс... Кажется, такого пользователя нет... Попробуйте повторить поиск:</p>
         <form action="explore" method="POST">
-            <input type="text" value="'  . '" name="username" pattern="[a-zA-Z0-9]+">
+            <input type="text" value="' . '" name="username" pattern="[a-zA-Z0-9]+">
             <input type="submit" value="Поиск" id="search-btn"><br>
             <a href="/" style="text-decoration: none; color: #0072ff;">На главную...</a>
         </form>
@@ -177,13 +165,3 @@ if (!empty($_POST['username']) or !empty($_GET['u'])) {
 }
 
 ?>
-
-<body>
-    <script>
-        $(document).ready(function() {
-            $(".gallery-item").click(function() {
-                this.requestFullscreen()
-            })
-        });
-    </script>
-</body>
