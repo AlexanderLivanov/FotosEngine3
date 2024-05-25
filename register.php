@@ -55,7 +55,7 @@ if (!empty($_POST['register'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="system/static/content/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Создать аккаунт - FotosWorld</title>
 </head>
 

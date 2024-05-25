@@ -1,4 +1,4 @@
 Deny from all
-<Files "avatar.png" "avatar.jpg" "avatar.gif" "avatar.PNG" "avatar.JPG" "avatar.GIF">
+<Files "avatar.png" "avatar.jpg" "avatar.gif" "avatar.PNG" "avatar.JPG" "avatar.GIF" "style.css">
     Allow from all
 </Files>

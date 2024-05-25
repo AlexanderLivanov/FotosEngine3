@@ -27,12 +27,13 @@
         // check if $uid exsists
         if(!empty($uid)){
             echo("Здравствуйте, " . $curr_user->getUsername($uid));
+            $curr_user->updateLastActivityTime($uid); 
         }
 	?>
 	<?php
 	require_once('system/static/footer.php');
 	?>
-   </body>
+</body>
 
 </html>
 <?php

@@ -61,6 +61,15 @@ class User
         return $this->getDataByID($id)['reg_date'];
     }
 
+    function getServerTime()
+    {
+        return date('d.m.Y H:i', time());
+    }
+
+    function updateLastActivityTime($id){
+        return $this->setDataByID($id, 'last_activity', getServerTime());
+    }
+
     // function getAV(){
 
     // }

@@ -1,17 +1,81 @@
 <?php
 // 13.03.2024 (c) Alexander Livanov
+
+if (!empty($_POST['session_destroy'])) {
+    echo('destr sess');
+    session_destroy();
+    setcookie("FW_AUTH_TOKEN", "", strtotime('+30 days'));
+    echo('<script>window.location.replace("/");</script>');
+}
 ?>
 <html>
 
 <head>
-    <link rel="stylesheet" href="system/static/content/css/style.css">
+    <style>
+        /* USER PROFILE PAGE CSS */
+        .profile {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 0 10px rgb(150, 150, 150);
+            border-radius: 15px;
+        }
+
+        .avatar img {
+            margin-top: 10px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgb(150, 150, 150);
+        }
+
+        .info {
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .row p {
+            box-shadow: 0 0 10px rgb(150, 150, 150);
+            border-radius: 15px;
+            margin: 0 10px 0 10px;
+            padding: 3px;
+        }
+
+        .tabs {
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            min-width: 100px;
+        }
+
+        .tab-btn.active {
+            background-color: #ccc;
+        }
+
+        .tab-content {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="profile">
         <div class="avatar">
             <img src="appicon.png" alt="User Avatar">
-            <h2><?= $curr_user->getUsername($uid); ?></h2>
+            <h2><?= $curr_user->getUsername($uid); ?>
+                <?= $curr_user->updateLastActivityTime($uid); ?></h2>
         </div>
         <div class="info">
             <div class="row">
@@ -33,6 +97,7 @@
         </div>
         <div id="info" class="tab-content" style="display: none;">
             <h3>Настройки аккаунта</h3>
+            <?php echo("<form method='post'><button type='submit' value='session_destroy' name='session_destroy'>Выйти</button></form>"); ?>
         </div>
     </div>
 
