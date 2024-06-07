@@ -163,10 +163,11 @@ function printUsers($users)
 {
     foreach ($users as $user) {
         echo ('<div style="border-radius: 5px; text-align: center; padding: .5em;">');
+        echo ('<a href="/users/' . $user['username'] . '">');
         echo ('<div id="profile-banner">');
         echo ('
                 <div id="profile-avatar">
-                    <img src="system/usercontent/' . $user['username'] . '/avatar.png">
+                    <img src="users/' . $user['username'] . '/avatar.png">
                 </div>
             ');
         echo ('<div style="padding: 1em;">');
@@ -174,6 +175,7 @@ function printUsers($users)
         echo ('<h3>Последний раз в сети: ' . $user['last_activity'] . '</h3>');
         echo ('</div>');
         echo ('</div>');
+        echo ('</a>');
         echo ('</div>');
     }
     echo ('<h3 style="color: #0072ff; text-align: center;">Никого не нашли? Попробуйте <a style="color: #0072ff;" href="explore.php">задать поиск ещё раз</a></h3>');

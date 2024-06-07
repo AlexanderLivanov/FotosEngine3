@@ -91,6 +91,9 @@ if (!empty($_POST['session_destroy'])) {
         </div>
         <div id="gallery" class="tab-content">
             <h3>Галерея</h3>
+            <?php
+                require_once('system/static/gallery.php');
+            ?>
         </div>
         <div id="posts" class="tab-content" style="display: none;">
             <h3>Посты</h3>

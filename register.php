@@ -40,6 +40,7 @@ if (!empty($_POST['register'])) {
         if ($result) {
             echo ('<p>ОК. Сейчас вы будете перенаправлены на страницу входа</p>');
             allocStorage($username);
+            setDefaultAvatar($username);
             setcookie("FW_AUTH_TOKEN", $token, strtotime('+30 days'));
             echo ("<script>setTimeout(function () { window.location.href = 'login.php'; }, 1000);</script>");
         } else {

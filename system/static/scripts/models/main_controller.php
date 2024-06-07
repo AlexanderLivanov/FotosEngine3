@@ -70,18 +70,6 @@ class User
         return $this->setDataByID($id, 'last_activity', getServerTime());
     }
 
-    // function getAV(){
-
-    // }
-
-    // function setAV(){
-
-    // }
-
-    // function getStoragePath(){
-
-    // }
-
     function findUserByToken($tokenHash){
         global $db_connect;
         $query = $db_connect->prepare("SELECT * FROM users WHERE token='" . hash('sha256', $tokenHash) . "'");

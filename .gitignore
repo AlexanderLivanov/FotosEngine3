@@ -4,3 +4,4 @@ system/configs/creds.php
 *.md
 promo/
 users.sql
+future.txt
