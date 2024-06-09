@@ -14,6 +14,7 @@
     require_once('system/configs/dbcfg.php');
     require_once('system/static/header.php');
     require_once('system/static/scripts/models/main_controller.php');
+    require_once('system/static/scripts/models/storage_controller.php');
 
     echo ("<br><br>");
     $curr_user = new User();

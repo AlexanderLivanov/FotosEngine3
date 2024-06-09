@@ -15,6 +15,6 @@ function setDefaultAvatar($username){
     copy($_SERVER['DOCUMENT_ROOT'] . '/appicon.png', $_SERVER['DOCUMENT_ROOT'] . "/users/$username/avatar.png");
 }
 
-function deletePhoto(){
-    unlink('users/' . $_GET['username'] . '/' . $_GET['photoID']);
+function deletePhoto($pathToPhoto){
+    unlink('users/');
 }

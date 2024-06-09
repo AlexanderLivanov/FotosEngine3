@@ -11,63 +11,7 @@ if (!empty($_POST['session_destroy'])) {
 <html>
 
 <head>
-    <style>
-        /* USER PROFILE PAGE CSS */
-        .profile {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            box-shadow: 0 0 10px rgb(150, 150, 150);
-            border-radius: 15px;
-        }
-
-        .avatar img {
-            margin-top: 10px;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgb(150, 150, 150);
-        }
-
-        .info {
-            margin-top: 20px;
-        }
-
-        .row {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .row p {
-            box-shadow: 0 0 10px rgb(150, 150, 150);
-            border-radius: 15px;
-            margin: 0 10px 0 10px;
-            padding: 3px;
-        }
-
-        .tabs {
-            margin-top: 20px;
-            border-radius: 15px;
-        }
-
-        .tab-btn {
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: none;
-            cursor: pointer;
-            border-radius: 15px;
-            min-width: 100px;
-        }
-
-        .tab-btn.active {
-            background-color: #ccc;
-        }
-
-        .tab-content {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/userprofile.css">
 </head>
 
 <body>
