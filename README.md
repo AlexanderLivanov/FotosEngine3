@@ -20,6 +20,10 @@ $db_name = "fotosworld";
 ```bash
 mkdir users && mkdir system/usercontent
 ```
+  А также не забудьте выдать права на чтение/запись группе и пользователю www-data для этих папок
+```bash
+chown www-data:www-data users
+chown www-data:www-data system/usercontent
 
 - Зарегестрируйте первого пользователя (register first user)
 Перейдите на http://localhost/register.php (open with URL)
