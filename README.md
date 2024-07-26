@@ -26,5 +26,18 @@ chown www-data:www-data users
 chown www-data:www-data system/usercontent
 ```
 
+- Настройте конфиг Apache2
+  Чтобы работали файлы .htaccess в конфиг /etc/apache2/apache2.conf добавьте эту строку
+```conf
+AccessFileName .htaccess
+```
+  А также найдите блок <Directory /var/www/> и измените его таким образом:
+```conf
+<Directory /var/www/>
+  Options Includes Indexes FollowSymLinks
+  AllowOverride All
+</Directory>
+```
+
 - Зарегестрируйте первого пользователя (register first user)
 Перейдите на http://localhost/register.php (open with URL)
