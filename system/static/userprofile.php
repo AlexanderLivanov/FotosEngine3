@@ -2,10 +2,15 @@
 // 13.03.2024 (c) Alexander Livanov
 
 if (!empty($_POST['session_destroy'])) {
-    echo ('destr sess');
     session_destroy();
     setcookie("FW_AUTH_TOKEN", "", strtotime('+30 days'));
     echo ('<script>window.location.replace("/");</script>');
+}
+
+// 28.07.2024 (c) Alexander Livanov
+
+if (!empty($_POST['send_note'])) {
+    echo($_POST['note_title']);
 }
 ?>
 <html>
@@ -58,9 +63,11 @@ if (!empty($_POST['session_destroy'])) {
         <div id="posts" class="tab-content" style="display: none;">
             <h3>Посты</h3>
             <div id="container">
-                <textarea name="post_title" id="" placeholder="Название поста" style="width: 90%; border: none; border-bottom: 2px solid #0072ff; outline: none;"></textarea>
-                <textarea id="default" placeholder="Краткость - сестра таланта..."></textarea>
-                <input type="submit" value="Создать пост" style="border-radius: 15px; color: #0072ff; padding: 1em;" onclick="alert(tinymce.activeEditor.getContent());">
+                <form method="post">
+                    <textarea name="note_title" id="post_title" placeholder="Название записи" style="width: 90%; border: none; border-bottom: 2px solid #0072ff; outline: none;"></textarea>
+                    <textarea id="note_text" placeholder="Краткость - сестра таланта..."></textarea>
+                    <button type="submit" value="send_note" name="send_note" style="border-radius: 15px; color: #0072ff; padding: 1em;">Создать заметку</button>
+                </form>
             </div>
         </div>
         <div id="info" class="tab-content" style="display: none;">
@@ -71,7 +78,7 @@ if (!empty($_POST['session_destroy'])) {
     <script src="https://cdn.tiny.cloud/1/qz8i2t9v3yqmvp0hyjlv95kybrn89u3py39nj1efjraq0e9p/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: 'textarea#default'
+            selector: 'textarea#note_text'
         });
     </script>
     <script>
