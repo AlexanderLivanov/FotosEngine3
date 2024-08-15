@@ -1,16 +1,23 @@
 <?php
 // 13.03.2024 (c) Alexander Livanov
 
+require_once('system/static/scripts/models/feed_controller.php');
+
 if (!empty($_POST['session_destroy'])) {
     session_destroy();
     setcookie("FW_AUTH_TOKEN", "", strtotime('+30 days'));
     echo ('<script>window.location.replace("/");</script>');
 }
 
-// 28.07.2024 (c) Alexander Livanov
-
 if (!empty($_POST['send_note'])) {
-    echo($_POST['note_title']);
+    $curr_post = new Note();
+    $note_title = $_POST['note_title'];
+    $note_text = $_POST['note_text'];
+    if($curr_post->createNote($curr_user->getUsername($uid), $note_title, $note_text, 1)){
+        header('Location:' . $_SERVER['PHP_SELF']);
+    }else{
+        echo('<p style="color: red;">Возникла ошибка. Проверьте форму</p>');
+    }
 }
 ?>
 <html>
@@ -64,8 +71,8 @@ if (!empty($_POST['send_note'])) {
             <h3>Посты</h3>
             <div id="container">
                 <form method="post">
-                    <textarea name="note_title" id="post_title" placeholder="Название записи" style="width: 90%; border: none; border-bottom: 2px solid #0072ff; outline: none;"></textarea>
-                    <textarea id="note_text" placeholder="Краткость - сестра таланта..."></textarea>
+                    <textarea name="note_title" id="note_title" placeholder="Название записи" style="width: 90%; border: none; border-bottom: 2px solid #0072ff; outline: none;"></textarea>
+                    <textarea name="note_text" id="note_text" placeholder="Краткость - сестра таланта..."></textarea>
                     <button type="submit" value="send_note" name="send_note" style="border-radius: 15px; color: #0072ff; padding: 1em;">Создать заметку</button>
                 </form>
             </div>

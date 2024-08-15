@@ -13,22 +13,22 @@
     <?php
 	require_once('system/configs/dbcfg.php');
 	require_once('system/static/header.php');
-        require_once('system/static/scripts/models/main_controller.php');
+    require_once('system/static/scripts/models/main_controller.php');
 
-        echo("<br><br>");
-        $curr_user = new User();
-        
-        // check if FW_AUTH_TOKEN exsists
-        if(!empty($_COOKIE['FW_AUTH_TOKEN'])){
-            $_SESSION['uid'] = $curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
-            $uid = $_SESSION['uid'];
-        }
+    echo("<br><br>");
+    $curr_user = new User();
+    
+    // check if FW_AUTH_TOKEN exsists
+    if(!empty($_COOKIE['FW_AUTH_TOKEN'])){
+        $_SESSION['uid'] = $curr_user->findUserByToken($_COOKIE['FW_AUTH_TOKEN']);
+        $uid = $_SESSION['uid'];
+    }
 
-        // check if $uid exsists
-        if(!empty($uid)){
-            echo("Здравствуйте, " . $curr_user->getUsername($uid));
-            $curr_user->updateLastActivityTime($uid); 
-        }
+    // check if $uid exsists
+    if(!empty($uid)){
+        echo("Здравствуйте, " . $curr_user->getUsername($uid));
+        $curr_user->updateLastActivityTime($uid); 
+    }
 	?>
 	<?php
 	require_once('system/static/footer.php');
