@@ -21,7 +21,24 @@ require_once('system/configs/dbcfg.php');
     <div class="feed">
         <div class="post-item">
             <div class="post-container">
-                text
+                <div class="post-info">
+                    <div class="post-avatar">
+
+                    </div>
+                    <div class="post-metatext">
+                        pr0gramm3r • 1'502 subs
+                    </div>
+                    <div class="post-title">
+                        <b>3.4.9 UPDATE!</b>
+                    </div>
+                    <div class="post-text">
+                        3.4.9 visual update. Coming 2027! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda odio provident sit. Corporis possimus animi nihil at, nostrum mollitia quam nesciunt modi a fugiat voluptates repudiandae in omnis dignissimos laudantium.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nulla repellat exercitationem quis inventore vitae ex. Labore dicta, culpa aperiam quod voluptatibus quam sapiente. Nam ipsum illo cumque blanditiis amet?
+                    </div>
+                </div>
+                <div class="post-img">
+
+                </div>
             </div>
         </div>
     </div>
