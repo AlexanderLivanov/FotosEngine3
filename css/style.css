@@ -7,10 +7,10 @@
 }
 
 .feed-item {
-    width: 60%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
-    height: 100vh;
+    height: 70vh;
     /* border: 2px solid black; */
     border-radius: 5px;
     margin-top: 5em;
@@ -241,4 +241,14 @@
     font-family: cursive;
 }
 
+/* 01.09.2024 (c) AlexanderLivanov */
 
+/* POSTS PAGE STYLE */
+
+.post-container {
+    width: 50%;
+    margin: 0 10px 0 10px;
+    height: 400px;
+    border-radius: 15px;
+    border: 2px solid red;
+}
