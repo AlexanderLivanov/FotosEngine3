@@ -13,6 +13,16 @@ class User
         return $result;
     }
 
+    private function getDataByParam($param, $data)
+    {
+        global $db_connect;
+        $query = $db_connect->prepare("SELECT * FROM users WHERE $param='$data'");
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     private function setDataByID($id, $field_name, $data)
     {
         global $db_connect;
@@ -27,9 +37,9 @@ class User
         return $result['role'];
     }
 
-    function getID($id)
+    function getID($username)
     {
-        $result = $this->getDataByID($id);
+        $result = $this->getDataByParam('username', $username);
 
         return $result['id'];
     }

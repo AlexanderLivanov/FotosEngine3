@@ -2,6 +2,13 @@
 
 <?php
 require_once('system/configs/dbcfg.php');
+require_once('system/static/scripts/models/main_controller.php');
+require_once('system/static/scripts/models/feed_controller.php');
+
+$curr_note = new Note();
+$curr_user = new User();
+
+$uid = $_SESSION['uid'];
 ?>
 
 <!DOCTYPE html>
@@ -16,31 +23,59 @@ require_once('system/configs/dbcfg.php');
 
 <body>
     <header>
-        <?php require_once('system/static/header.php'); ?>
+        <?php 
+        require_once('system/static/header.php');
+        if (!$curr_user->auth()) {
+            header('Location: /login.php');
+        }
+        ?>
     </header>
     <div class="feed">
-        <div class="post-item">
-            <div class="post-container">
-                <div class="post-info">
-                    <div class="post-avatar">
+        <?php
+            $notes = $curr_note->getAllNotes();
+            foreach($notes as $note){
+                echo('
+                <div class="post-item">
+                    <div class="post-container">
+                        <div class="post-info">
+                            <div class="post-avatar">
 
-                    </div>
-                    <div class="post-metatext">
-                        pr0gramm3r • 1'502 subs
-                    </div>
-                    <div class="post-title">
-                        <b>3.4.9 UPDATE!</b>
-                    </div>
-                    <div class="post-text">
-                        3.4.9 visual update. Coming 2027! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda odio provident sit. Corporis possimus animi nihil at, nostrum mollitia quam nesciunt modi a fugiat voluptates repudiandae in omnis dignissimos laudantium.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nulla repellat exercitationem quis inventore vitae ex. Labore dicta, culpa aperiam quod voluptatibus quam sapiente. Nam ipsum illo cumque blanditiis amet?
+                            </div>
+                            <div class="post-metatext">
+                                <p>
+                                '. 
+                                $note['author'] . " <b>[Рейтинг: " . $curr_user->getUserRating($curr_user->getID($note['author'])) . "]</b>"
+                                .'
+                                </p>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                <b>'. $note['title'] .'</b>
+                                </p>
+                            </div>
+                            <div class="post-text">
+                                <p>
+                                '.
+                                    $note['text']
+                                . '
+                                </p>
+                            </div>
+                            <div class="post-meta">
+                                <p>
+                                '.
+                                    "Просмотры: " . $note['views'] . " | +" . $note['likes'] . " | -" . $note['dislikes']
+                                .'
+                                </p>
+                            </div>
+                        </div>
+                        <div class="post-img">
+                            <img src="'. $note['img_path'] .'" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="post-img">
-
-                </div>
-            </div>
-        </div>
+                ');
+            }
+        ?>
     </div>
     <footer>
         <?php require_once('system/static/footer.php'); ?>

@@ -292,6 +292,7 @@
 
 .post-item {
     width: 70%;
+    height: auto;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
@@ -333,6 +334,17 @@
     filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
 }
 
+.post-img img {
+    max-width: none;
+    min-width: auto;
+    min-height: auto;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .post-avatar {
     float: left;
     overflow: hidden;
@@ -342,12 +354,37 @@
     filter: drop-shadow(10px 10px 20px rgb(199, 199, 199));
     border-radius: 999999px;
     margin: .5em;
+    vertical-align: middle;
+}
+
+.post-avatar {
+    display: inline-block;
 }
 
 .post-metatext {
     overflow: hidden;
     height: 50px;
-    margin: .5em;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+}
+
+.post-metatext p {
+    display: inline-block;
+}
+
+.post-title {
+    margin: 10px;
+}
+
+.post-text {
+    margin: 5px;
+}
+
+.post-meta {
+    overflow: hidden;
+    height: 50px;
     font-size: 1.2rem;
     vertical-align: middle;
     text-align: center;
