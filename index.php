@@ -28,6 +28,7 @@
     if(!empty($uid)){
         echo("Здравствуйте, " . $curr_user->getUsername($uid));
         $curr_user->updateLastActivityTime($uid); 
+        echo("<br>Переходите в ленту - <a href='/feed.php'>*клацнуть чтобы открыть*</a>");
     }
 	?>
 	<?php
