@@ -44,7 +44,7 @@ $uid = $_SESSION['uid'];
                             <div class="post-metatext">
                                 <p>
                                 '. 
-                                $note['author'] . " <b>[Рейтинг: " . $curr_user->getUserRating($curr_user->getID($note['author'])) . "]</b>"
+                                $note['author'] . " <b>[Р: " . $curr_user->getUserRating($curr_user->getID($note['author'])) . "]</b>"
                                 .'
                                 </p>
                             </div>
@@ -63,7 +63,7 @@ $uid = $_SESSION['uid'];
                             <div class="post-meta">
                                 <p>
                                 '.
-                                    "Просмотры: " . $note['views'] . " | +" . $note['likes'] . " | -" . $note['dislikes']
+                                    "Просмотры: " . $note['views'] . " | +" . $note['likes'] . " | -" . $note['dislikes'] . " <br> " . $note['datetime']
                                 .'
                                 </p>
                             </div>
